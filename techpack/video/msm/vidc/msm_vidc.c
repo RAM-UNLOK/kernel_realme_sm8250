@@ -78,7 +78,7 @@ int msm_vidc_poll(void *instance, struct file *filp,
 	poll_wait(filp, &outq->done_wq, wait);
 	return get_poll_flags(inst);
 }
-EXPORT_SYMBOL(msm_vidc_poll);
+EXPORT_SYMBOL_GPL(msm_vidc_poll);
 
 int msm_vidc_querycap(void *instance, struct v4l2_capability *cap)
 {
@@ -106,7 +106,7 @@ int msm_vidc_querycap(void *instance, struct v4l2_capability *cap)
 
 	return 0;
 }
-EXPORT_SYMBOL(msm_vidc_querycap);
+EXPORT_SYMBOL_GPL(msm_vidc_querycap);
 
 int msm_vidc_enum_fmt(void *instance, struct v4l2_fmtdesc *f)
 {
@@ -121,7 +121,7 @@ int msm_vidc_enum_fmt(void *instance, struct v4l2_fmtdesc *f)
 		return msm_venc_enum_fmt(instance, f);
 	return -EINVAL;
 }
-EXPORT_SYMBOL(msm_vidc_enum_fmt);
+EXPORT_SYMBOL_GPL(msm_vidc_enum_fmt);
 
 int msm_vidc_query_ctrl(void *instance, struct v4l2_queryctrl *q_ctrl)
 {
@@ -161,7 +161,7 @@ int msm_vidc_query_ctrl(void *instance, struct v4l2_queryctrl *q_ctrl)
 		q_ctrl->default_value, q_ctrl->step, q_ctrl->flags);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_query_ctrl);
+EXPORT_SYMBOL_GPL(msm_vidc_query_ctrl);
 
 int msm_vidc_query_menu(void *instance, struct v4l2_querymenu *qmenu)
 {
@@ -199,7 +199,7 @@ int msm_vidc_query_menu(void *instance, struct v4l2_querymenu *qmenu)
 		rc ? "not supported" : "supported");
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_query_menu);
+EXPORT_SYMBOL_GPL(msm_vidc_query_menu);
 
 int msm_vidc_s_fmt(void *instance, struct v4l2_format *f)
 {
@@ -222,7 +222,7 @@ int msm_vidc_s_fmt(void *instance, struct v4l2_format *f)
 		f->fmt.pix_mp.plane_fmt[1].sizeimage, inst->in_reconfig);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_s_fmt);
+EXPORT_SYMBOL_GPL(msm_vidc_s_fmt);
 
 int msm_vidc_g_fmt(void *instance, struct v4l2_format *f)
 {
@@ -245,7 +245,7 @@ int msm_vidc_g_fmt(void *instance, struct v4l2_format *f)
 		f->fmt.pix_mp.plane_fmt[1].sizeimage, inst->in_reconfig);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_g_fmt);
+EXPORT_SYMBOL_GPL(msm_vidc_g_fmt);
 
 int msm_vidc_s_ctrl(void *instance, struct v4l2_control *control)
 {
@@ -256,7 +256,7 @@ int msm_vidc_s_ctrl(void *instance, struct v4l2_control *control)
 
 	return msm_comm_s_ctrl(instance, control);
 }
-EXPORT_SYMBOL(msm_vidc_s_ctrl);
+EXPORT_SYMBOL_GPL(msm_vidc_s_ctrl);
 
 int msm_vidc_g_ctrl(void *instance, struct v4l2_control *control)
 {
@@ -276,7 +276,7 @@ int msm_vidc_g_ctrl(void *instance, struct v4l2_control *control)
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_g_ctrl);
+EXPORT_SYMBOL_GPL(msm_vidc_g_ctrl);
 
 int msm_vidc_reqbufs(void *instance, struct v4l2_requestbuffers *b)
 {
@@ -301,7 +301,7 @@ int msm_vidc_reqbufs(void *instance, struct v4l2_requestbuffers *b)
 		s_vpr_e(inst->sid, "Failed to get reqbufs, %d\n", rc);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_reqbufs);
+EXPORT_SYMBOL_GPL(msm_vidc_reqbufs);
 
 static bool valid_v4l2_buffer(struct v4l2_buffer *b,
 		struct msm_vidc_inst *inst)
@@ -363,7 +363,7 @@ int msm_vidc_release_buffer(void *instance, int type, unsigned int index)
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_release_buffer);
+EXPORT_SYMBOL_GPL(msm_vidc_release_buffer);
 
 int msm_vidc_qbuf(void *instance, struct v4l2_buffer *b)
 {
@@ -442,7 +442,7 @@ unlock:
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_qbuf);
+EXPORT_SYMBOL_GPL(msm_vidc_qbuf);
 
 int msm_vidc_dqbuf(void *instance, struct v4l2_buffer *b)
 {
@@ -493,7 +493,7 @@ int msm_vidc_dqbuf(void *instance, struct v4l2_buffer *b)
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_dqbuf);
+EXPORT_SYMBOL_GPL(msm_vidc_dqbuf);
 
 int msm_vidc_streamon(void *instance, enum v4l2_buf_type i)
 {
@@ -519,7 +519,7 @@ int msm_vidc_streamon(void *instance, enum v4l2_buf_type i)
 	}
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_streamon);
+EXPORT_SYMBOL_GPL(msm_vidc_streamon);
 
 int msm_vidc_streamoff(void *instance, enum v4l2_buf_type i)
 {
@@ -554,7 +554,7 @@ int msm_vidc_streamoff(void *instance, enum v4l2_buf_type i)
 		s_vpr_e(inst->sid, "streamoff failed on port: %d\n", i);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_streamoff);
+EXPORT_SYMBOL_GPL(msm_vidc_streamoff);
 
 int msm_vidc_enum_framesizes(void *instance, struct v4l2_frmsizeenum *fsize)
 {
@@ -581,7 +581,7 @@ int msm_vidc_enum_framesizes(void *instance, struct v4l2_frmsizeenum *fsize)
 		capability->cap[CAP_FRAME_HEIGHT].step_size;
 	return 0;
 }
-EXPORT_SYMBOL(msm_vidc_enum_framesizes);
+EXPORT_SYMBOL_GPL(msm_vidc_enum_framesizes);
 
 static void *vidc_get_userptr(struct device *dev, unsigned long vaddr,
 			unsigned long size, enum dma_data_direction dma_dir)
@@ -1240,7 +1240,7 @@ int msm_vidc_subscribe_event(void *inst,
 		sub, MAX_EVENTS, NULL);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_subscribe_event);
+EXPORT_SYMBOL_GPL(msm_vidc_subscribe_event);
 
 int msm_vidc_unsubscribe_event(void *inst,
 	const struct v4l2_event_subscription *sub)
@@ -1254,7 +1254,7 @@ int msm_vidc_unsubscribe_event(void *inst,
 	rc = v4l2_event_unsubscribe(&vidc_inst->event_handler, sub);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_unsubscribe_event);
+EXPORT_SYMBOL_GPL(msm_vidc_unsubscribe_event);
 
 int msm_vidc_dqevent(void *inst, struct v4l2_event *event)
 {
@@ -1267,7 +1267,7 @@ int msm_vidc_dqevent(void *inst, struct v4l2_event *event)
 	rc = v4l2_event_dequeue(&vidc_inst->event_handler, event, false);
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_dqevent);
+EXPORT_SYMBOL_GPL(msm_vidc_dqevent);
 
 int msm_vidc_private(void *vidc_inst, unsigned int cmd,
 		struct msm_vidc_arg *arg)
@@ -1296,7 +1296,7 @@ int msm_vidc_private(void *vidc_inst, unsigned int cmd,
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_private);
+EXPORT_SYMBOL_GPL(msm_vidc_private);
 
 static int msm_vidc_try_set_ctrl(void *instance, struct v4l2_ctrl *ctrl)
 {
@@ -1592,7 +1592,7 @@ err_invalid_sid:
 err_invalid_core:
 	return inst;
 }
-EXPORT_SYMBOL(msm_vidc_open);
+EXPORT_SYMBOL_GPL(msm_vidc_open);
 
 static void msm_vidc_cleanup_instance(struct msm_vidc_inst *inst)
 {
@@ -1772,11 +1772,11 @@ int msm_vidc_close(void *instance)
 	kref_put(&inst->kref, close_helper);
 	return 0;
 }
-EXPORT_SYMBOL(msm_vidc_close);
+EXPORT_SYMBOL_GPL(msm_vidc_close);
 
 int msm_vidc_suspend(int core_id)
 {
 	return msm_comm_suspend(core_id);
 }
-EXPORT_SYMBOL(msm_vidc_suspend);
+EXPORT_SYMBOL_GPL(msm_vidc_suspend);
 

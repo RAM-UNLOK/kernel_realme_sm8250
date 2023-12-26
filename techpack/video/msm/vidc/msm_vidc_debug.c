@@ -12,10 +12,10 @@
 
 int msm_vidc_debug = VIDC_ERR | VIDC_PRINTK |
 	FW_ERROR | FW_FATAL | FW_FTRACE;
-EXPORT_SYMBOL(msm_vidc_debug);
+EXPORT_SYMBOL_GPL(msm_vidc_debug);
 
 bool msm_vidc_lossless_encode = !true;
-EXPORT_SYMBOL(msm_vidc_lossless_encode);
+EXPORT_SYMBOL_GPL(msm_vidc_lossless_encode);
 
 int msm_vidc_fw_debug_mode = HFI_DEBUG_MODE_QUEUE;
 bool msm_vidc_fw_coverage = !true;

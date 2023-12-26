@@ -335,7 +335,7 @@ int msm_vidc_load_u32_table(struct platform_device *pdev,
 
 	return rc;
 }
-EXPORT_SYMBOL(msm_vidc_load_u32_table);
+EXPORT_SYMBOL_GPL(msm_vidc_load_u32_table);
 
 /* A comparator to compare loads (needed later on) */
 static int cmp(const void *a, const void *b)

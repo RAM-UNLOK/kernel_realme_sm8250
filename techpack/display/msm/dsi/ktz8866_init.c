@@ -102,7 +102,7 @@ int lcd_bl_set_led_brightness(int value)//for set bringhtness
 	}
 	return 0;
 }
-EXPORT_SYMBOL(lcd_bl_set_led_brightness);
+EXPORT_SYMBOL_GPL(lcd_bl_set_led_brightness);
 
 int lcd_set_bias(bool enable)
 {
@@ -123,7 +123,7 @@ int lcd_set_bias(bool enable)
 	}
 	return 0;
 }
-EXPORT_SYMBOL(lcd_set_bias);
+EXPORT_SYMBOL_GPL(lcd_set_bias);
 
 static const struct of_device_id lcd_ktz8866_of_match[] = {
     { .compatible = "ktz,ktz8866", },
@@ -171,7 +171,7 @@ int turn_on_ktz8866_hw_en(bool on)
 
 	return 0;
 }
-EXPORT_SYMBOL(turn_on_ktz8866_hw_en);
+EXPORT_SYMBOL_GPL(turn_on_ktz8866_hw_en);
 
 static int lcd_power_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {

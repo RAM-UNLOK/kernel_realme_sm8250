@@ -224,7 +224,7 @@ handle_mismatch:
 	mutex_unlock(&tbl.bufq[idx].q_lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_get_io_buf);
+EXPORT_SYMBOL_GPL(cam_mem_get_io_buf);
 
 int cam_mem_get_cpu_buf(int32_t buf_handle, uintptr_t *vaddr_ptr, size_t *len)
 {
@@ -267,7 +267,7 @@ int cam_mem_get_cpu_buf(int32_t buf_handle, uintptr_t *vaddr_ptr, size_t *len)
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_mem_get_cpu_buf);
+EXPORT_SYMBOL_GPL(cam_mem_get_cpu_buf);
 
 int cam_mem_mgr_cache_ops(struct cam_mem_cache_ops_cmd *cmd)
 {
@@ -346,7 +346,7 @@ end:
 	mutex_unlock(&tbl.bufq[idx].q_lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_mgr_cache_ops);
+EXPORT_SYMBOL_GPL(cam_mem_mgr_cache_ops);
 
 static int cam_mem_util_get_dma_buf(size_t len,
 	unsigned int heap_id_mask,
@@ -1190,7 +1190,7 @@ map_fail:
 ion_fail:
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_mgr_request_mem);
+EXPORT_SYMBOL_GPL(cam_mem_mgr_request_mem);
 
 int cam_mem_mgr_release_mem(struct cam_mem_mgr_memory_desc *inp)
 {
@@ -1233,7 +1233,7 @@ int cam_mem_mgr_release_mem(struct cam_mem_mgr_memory_desc *inp)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_mgr_release_mem);
+EXPORT_SYMBOL_GPL(cam_mem_mgr_release_mem);
 
 int cam_mem_mgr_reserve_memory_region(struct cam_mem_mgr_request_desc *inp,
 	enum cam_smmu_region_id region,
@@ -1336,7 +1336,7 @@ smmu_fail:
 ion_fail:
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_mgr_reserve_memory_region);
+EXPORT_SYMBOL_GPL(cam_mem_mgr_reserve_memory_region);
 
 int cam_mem_mgr_free_memory_region(struct cam_mem_mgr_memory_desc *inp)
 {
@@ -1408,4 +1408,4 @@ int cam_mem_mgr_free_memory_region(struct cam_mem_mgr_memory_desc *inp)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_mem_mgr_free_memory_region);
+EXPORT_SYMBOL_GPL(cam_mem_mgr_free_memory_region);

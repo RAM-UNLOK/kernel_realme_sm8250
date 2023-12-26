@@ -4872,7 +4872,7 @@ err:
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_ife_csid_hw_probe_init);
+EXPORT_SYMBOL_GPL(cam_ife_csid_hw_probe_init);
 
 int cam_ife_csid_hw_deinit(struct cam_ife_csid_hw *ife_csid_hw)
 {
@@ -4904,4 +4904,4 @@ int cam_ife_csid_hw_deinit(struct cam_ife_csid_hw *ife_csid_hw)
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_ife_csid_hw_deinit);
+EXPORT_SYMBOL_GPL(cam_ife_csid_hw_deinit);

@@ -86,7 +86,7 @@ extern int oplus_dimlayer_hbm_saved;
 extern int enable_global_hbm_flags;
 
 /*#ifdef OPLUS_BUG_STABILITY*/
-EXPORT_SYMBOL(backlight_smooth_enable);
+EXPORT_SYMBOL_GPL(backlight_smooth_enable);
 /*#endif*/
 
 extern PANEL_VOLTAGE_BAK panel_vol_bak[PANEL_VOLTAGE_ID_MAX];
@@ -97,7 +97,7 @@ extern int mca_mode;
 extern int oplus_dimlayer_bl;
 /*#ifdef OPLUS_BUG_STABILITY*/
 int dsi_cmd_log_enable = 0;
-EXPORT_SYMBOL(dsi_cmd_log_enable);
+EXPORT_SYMBOL_GPL(dsi_cmd_log_enable);
 /*#endif*/
 
 /*#ifdef OPLUS_BUG_STABILITY*/
@@ -130,8 +130,8 @@ int unregister_lcdinfo_notifier(struct notifier_block *nb)
 	return blocking_notifier_chain_unregister(&lcdinfo_notifiers, nb);
 }
 
-EXPORT_SYMBOL(register_lcdinfo_notifier);
-EXPORT_SYMBOL(unregister_lcdinfo_notifier);
+EXPORT_SYMBOL_GPL(register_lcdinfo_notifier);
+EXPORT_SYMBOL_GPL(unregister_lcdinfo_notifier);
 
 void lcdinfo_notify(unsigned long val, void *v)
 {
@@ -3779,7 +3779,7 @@ int oplus_display_get_resolution(unsigned int *xres, unsigned int *yres)
 	}
 	return 0;
 }
-EXPORT_SYMBOL(oplus_display_get_resolution);
+EXPORT_SYMBOL_GPL(oplus_display_get_resolution);
 
 static int oplus_opticalfp_irq_handler(struct fp_underscreen_info *tp_info) {
 	fp_state.x = tp_info->x;

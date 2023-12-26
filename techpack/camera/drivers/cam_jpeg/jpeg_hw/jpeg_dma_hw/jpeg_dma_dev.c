@@ -22,7 +22,7 @@
 static struct cam_jpeg_dma_device_hw_info cam_jpeg_dma_hw_info = {
 	.reserved = 0,
 };
-EXPORT_SYMBOL(cam_jpeg_dma_hw_info);
+EXPORT_SYMBOL_GPL(cam_jpeg_dma_hw_info);
 
 static int cam_jpeg_dma_register_cpas(struct cam_hw_soc_info *soc_info,
 	struct cam_jpeg_dma_device_core_info *core_info,

@@ -95,7 +95,7 @@ void cam_res_mgr_led_trigger_register(const char *name, struct led_trigger **tp)
 		mutex_unlock(&cam_res->flash_res_lock);
 	}
 }
-EXPORT_SYMBOL(cam_res_mgr_led_trigger_register);
+EXPORT_SYMBOL_GPL(cam_res_mgr_led_trigger_register);
 
 void cam_res_mgr_led_trigger_unregister(struct led_trigger *tp)
 {
@@ -126,7 +126,7 @@ void cam_res_mgr_led_trigger_unregister(struct led_trigger *tp)
 	}
 	mutex_unlock(&cam_res->flash_res_lock);
 }
-EXPORT_SYMBOL(cam_res_mgr_led_trigger_unregister);
+EXPORT_SYMBOL_GPL(cam_res_mgr_led_trigger_unregister);
 
 void cam_res_mgr_led_trigger_event(struct led_trigger *trig,
 	enum led_brightness brightness)
@@ -155,7 +155,7 @@ void cam_res_mgr_led_trigger_event(struct led_trigger *trig,
 	if (found)
 		led_trigger_event(trig, brightness);
 }
-EXPORT_SYMBOL(cam_res_mgr_led_trigger_event);
+EXPORT_SYMBOL_GPL(cam_res_mgr_led_trigger_event);
 
 int cam_res_mgr_shared_pinctrl_init(void)
 {
@@ -216,7 +216,7 @@ int cam_res_mgr_shared_pinctrl_init(void)
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_res_mgr_shared_pinctrl_init);
+EXPORT_SYMBOL_GPL(cam_res_mgr_shared_pinctrl_init);
 
 static bool cam_res_mgr_shared_pinctrl_check_hold(void)
 {
@@ -279,7 +279,7 @@ void cam_res_mgr_shared_pinctrl_put(void)
 	cam_res->pstatus = PINCTRL_STATUS_PUT;
 	mutex_unlock(&cam_res->gpio_res_lock);
 }
-EXPORT_SYMBOL(cam_res_mgr_shared_pinctrl_put);
+EXPORT_SYMBOL_GPL(cam_res_mgr_shared_pinctrl_put);
 
 int cam_res_mgr_shared_pinctrl_select_state(bool active)
 {
@@ -315,7 +315,7 @@ int cam_res_mgr_shared_pinctrl_select_state(bool active)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_res_mgr_shared_pinctrl_select_state);
+EXPORT_SYMBOL_GPL(cam_res_mgr_shared_pinctrl_select_state);
 
 int cam_res_mgr_shared_pinctrl_post_init(void)
 {
@@ -352,7 +352,7 @@ int cam_res_mgr_shared_pinctrl_post_init(void)
 
 	return ret;
 }
-EXPORT_SYMBOL(cam_res_mgr_shared_pinctrl_post_init);
+EXPORT_SYMBOL_GPL(cam_res_mgr_shared_pinctrl_post_init);
 
 static int cam_res_mgr_add_device(struct device *dev,
 	struct cam_gpio_res *gpio_res)
@@ -474,7 +474,7 @@ int cam_res_mgr_gpio_request(struct device *dev, uint gpio,
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_res_mgr_gpio_request);
+EXPORT_SYMBOL_GPL(cam_res_mgr_gpio_request);
 
 static void cam_res_mgr_gpio_free(struct device *dev, uint gpio)
 {
@@ -541,7 +541,7 @@ void cam_res_mgr_gpio_free_arry(struct device *dev,
 	while (num--)
 		cam_res_mgr_gpio_free(dev, (array[num]).gpio);
 }
-EXPORT_SYMBOL(cam_res_mgr_gpio_free_arry);
+EXPORT_SYMBOL_GPL(cam_res_mgr_gpio_free_arry);
 
 int cam_res_mgr_gpio_set_value(unsigned int gpio, int value)
 {
@@ -586,7 +586,7 @@ int cam_res_mgr_gpio_set_value(unsigned int gpio, int value)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_res_mgr_gpio_set_value);
+EXPORT_SYMBOL_GPL(cam_res_mgr_gpio_set_value);
 
 void cam_res_mgr_shared_clk_config(bool value)
 {
@@ -600,7 +600,7 @@ void cam_res_mgr_shared_clk_config(bool value)
 		cam_res->shared_clk_ref_count--;
 	mutex_unlock(&cam_res->clk_res_lock);
 }
-EXPORT_SYMBOL(cam_res_mgr_shared_clk_config);
+EXPORT_SYMBOL_GPL(cam_res_mgr_shared_clk_config);
 
 static int cam_res_mgr_parse_dt(struct device *dev)
 {

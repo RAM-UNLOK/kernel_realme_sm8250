@@ -28,7 +28,7 @@ int oplus_display_register_client(struct notifier_block *nb)
 	return blocking_notifier_chain_register(&oplus_display_notifier_list,
 						nb);
 }
-EXPORT_SYMBOL(oplus_display_register_client);
+EXPORT_SYMBOL_GPL(oplus_display_register_client);
 
 
 int oplus_display_unregister_client(struct notifier_block *nb)
@@ -36,7 +36,7 @@ int oplus_display_unregister_client(struct notifier_block *nb)
 	return blocking_notifier_chain_unregister(&oplus_display_notifier_list,
 						  nb);
 }
-EXPORT_SYMBOL(oplus_display_unregister_client);
+EXPORT_SYMBOL_GPL(oplus_display_unregister_client);
 
 static int oplus_display_notifier_call_chain(unsigned long val, void *v)
 {
@@ -153,7 +153,7 @@ void set_oplus_display_power_status(enum oplus_display_power_status power_status
 enum oplus_display_power_status get_oplus_display_power_status(void) {
 	return oplus_display_status;
 }
-EXPORT_SYMBOL(get_oplus_display_power_status);
+EXPORT_SYMBOL_GPL(get_oplus_display_power_status);
 
 void set_oplus_display_scene(enum oplus_display_scene display_scene) {
 	oplus_siaplay_save_scene = display_scene;
@@ -163,7 +163,7 @@ enum oplus_display_scene get_oplus_display_scene(void) {
 	return oplus_siaplay_save_scene;
 }
 
-EXPORT_SYMBOL(get_oplus_display_scene);
+EXPORT_SYMBOL_GPL(get_oplus_display_scene);
 
 bool is_oplus_display_support_feature(enum oplus_display_feature feature_name) {
 	bool ret = false;

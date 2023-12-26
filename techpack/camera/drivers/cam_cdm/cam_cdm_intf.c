@@ -149,7 +149,7 @@ int cam_cdm_get_iommu_handle(char *identifier,
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_get_iommu_handle);
+EXPORT_SYMBOL_GPL(cam_cdm_get_iommu_handle);
 
 int cam_cdm_acquire(struct cam_cdm_acquire_data *data)
 {
@@ -201,7 +201,7 @@ end:
 	}
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_acquire);
+EXPORT_SYMBOL_GPL(cam_cdm_acquire);
 
 int cam_cdm_release(uint32_t handle)
 {
@@ -235,7 +235,7 @@ int cam_cdm_release(uint32_t handle)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_release);
+EXPORT_SYMBOL_GPL(cam_cdm_release);
 
 
 int cam_cdm_submit_bls(uint32_t handle, struct cam_cdm_bl_request *data)
@@ -277,7 +277,7 @@ int cam_cdm_submit_bls(uint32_t handle, struct cam_cdm_bl_request *data)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_submit_bls);
+EXPORT_SYMBOL_GPL(cam_cdm_submit_bls);
 
 int cam_cdm_stream_on(uint32_t handle)
 {
@@ -311,7 +311,7 @@ int cam_cdm_stream_on(uint32_t handle)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_stream_on);
+EXPORT_SYMBOL_GPL(cam_cdm_stream_on);
 
 int cam_cdm_stream_off(uint32_t handle)
 {
@@ -343,7 +343,7 @@ int cam_cdm_stream_off(uint32_t handle)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_stream_off);
+EXPORT_SYMBOL_GPL(cam_cdm_stream_off);
 
 int cam_cdm_reset_hw(uint32_t handle)
 {
@@ -377,7 +377,7 @@ int cam_cdm_reset_hw(uint32_t handle)
 
 	return rc;
 }
-EXPORT_SYMBOL(cam_cdm_reset_hw);
+EXPORT_SYMBOL_GPL(cam_cdm_reset_hw);
 
 int cam_cdm_intf_register_hw_cdm(struct cam_hw_intf *hw,
 	struct cam_cdm_private_dt_data *data, enum cam_cdm_type type,

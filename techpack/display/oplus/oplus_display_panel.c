@@ -140,7 +140,7 @@ int oplus_display_fix_apollo_level(void)
 	return 0;
 }
 
-EXPORT_SYMBOL(oplus_display_fix_apollo_level);
+EXPORT_SYMBOL_GPL(oplus_display_fix_apollo_level);
 
 static int oplus_display_set_apollo_backlight_value(void *data)
 {

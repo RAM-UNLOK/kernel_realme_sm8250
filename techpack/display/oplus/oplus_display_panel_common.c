@@ -43,7 +43,7 @@ enum {
 DEFINE_MUTEX(oplus_mca_lock);
 DEFINE_MUTEX(oplus_spr_lock);
 
-EXPORT_SYMBOL(oplus_dither_enable);
+EXPORT_SYMBOL_GPL(oplus_dither_enable);
 
 extern int msm_drm_notifier_call_chain(unsigned long val, void *v);
 extern int __oplus_display_set_spr(int mode);

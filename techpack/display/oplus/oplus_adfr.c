@@ -1794,5 +1794,5 @@ void drm_mode_sort_for_adfr(struct list_head *mode_list)
 {
 	list_sort(NULL, mode_list, drm_mode_compare_for_adfr);
 }
-EXPORT_SYMBOL(drm_mode_sort_for_adfr);
+EXPORT_SYMBOL_GPL(drm_mode_sort_for_adfr);
 

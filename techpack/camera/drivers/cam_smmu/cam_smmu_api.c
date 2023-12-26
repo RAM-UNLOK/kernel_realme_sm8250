@@ -1251,7 +1251,7 @@ unlock_and_end:
 end:
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_alloc_firmware);
+EXPORT_SYMBOL_GPL(cam_smmu_alloc_firmware);
 
 int cam_smmu_dealloc_firmware(int32_t smmu_hdl)
 {
@@ -1320,7 +1320,7 @@ unlock_and_end:
 end:
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_dealloc_firmware);
+EXPORT_SYMBOL_GPL(cam_smmu_dealloc_firmware);
 
 int cam_smmu_alloc_qdss(int32_t smmu_hdl,
 	dma_addr_t *iova,
@@ -1391,7 +1391,7 @@ unlock_and_end:
 end:
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_alloc_qdss);
+EXPORT_SYMBOL_GPL(cam_smmu_alloc_qdss);
 
 int cam_smmu_dealloc_qdss(int32_t smmu_hdl)
 {
@@ -1450,7 +1450,7 @@ unlock_and_end:
 end:
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_dealloc_qdss);
+EXPORT_SYMBOL_GPL(cam_smmu_dealloc_qdss);
 
 int cam_smmu_get_io_region_info(int32_t smmu_hdl,
 	dma_addr_t *iova, size_t *len
@@ -1594,7 +1594,7 @@ int cam_smmu_get_region_info(int32_t smmu_hdl,
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return 0;
 }
-EXPORT_SYMBOL(cam_smmu_get_region_info);
+EXPORT_SYMBOL_GPL(cam_smmu_get_region_info);
 
 int cam_smmu_reserve_sec_heap(int32_t smmu_hdl,
 	struct dma_buf *buf,
@@ -1687,7 +1687,7 @@ err_out:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_reserve_sec_heap);
+EXPORT_SYMBOL_GPL(cam_smmu_reserve_sec_heap);
 
 int cam_smmu_release_sec_heap(int32_t smmu_hdl)
 {
@@ -1739,7 +1739,7 @@ int cam_smmu_release_sec_heap(int32_t smmu_hdl)
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_smmu_release_sec_heap);
+EXPORT_SYMBOL_GPL(cam_smmu_release_sec_heap);
 
 #ifndef OPLUS_FEATURE_CAMERA_COMMON
 //gongqiang.xiao@Camera add for case:04457772
@@ -2165,7 +2165,7 @@ int cam_smmu_get_handle(char *identifier, int *handle_ptr)
 
 	return ret;
 }
-EXPORT_SYMBOL(cam_smmu_get_handle);
+EXPORT_SYMBOL_GPL(cam_smmu_get_handle);
 
 int cam_smmu_ops(int handle, enum cam_smmu_ops_param ops)
 {
@@ -2210,7 +2210,7 @@ int cam_smmu_ops(int handle, enum cam_smmu_ops_param ops)
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return ret;
 }
-EXPORT_SYMBOL(cam_smmu_ops);
+EXPORT_SYMBOL_GPL(cam_smmu_ops);
 
 static int cam_smmu_alloc_scratch_buffer_add_to_list(int idx,
 	size_t virt_len,
@@ -2685,7 +2685,7 @@ get_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_map_stage2_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_map_stage2_iova);
 
 static int cam_smmu_secure_unmap_buf_and_remove_from_list(
 		struct cam_sec_buff_info *mapping_info,
@@ -2788,7 +2788,7 @@ put_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_unmap_stage2_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_unmap_stage2_iova);
 
 static int cam_smmu_map_iova_validate_params(int handle,
 	enum cam_smmu_map_dir dir,
@@ -2908,7 +2908,7 @@ get_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_map_user_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_map_user_iova);
 
 int cam_smmu_map_kernel_iova(int handle, struct dma_buf *buf,
 	enum cam_smmu_map_dir dir, dma_addr_t *paddr_ptr,
@@ -2968,7 +2968,7 @@ get_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_map_kernel_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_map_kernel_iova);
 
 int cam_smmu_get_iova(int handle, int ion_fd,
 	dma_addr_t *paddr_ptr, size_t *len_ptr)
@@ -3024,7 +3024,7 @@ get_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_get_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_get_iova);
 
 int cam_smmu_get_stage2_iova(int handle, int ion_fd,
 	dma_addr_t *paddr_ptr, size_t *len_ptr)
@@ -3084,7 +3084,7 @@ get_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_get_stage2_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_get_stage2_iova);
 
 static int cam_smmu_unmap_validate_params(int handle)
 {
@@ -3157,7 +3157,7 @@ unmap_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_unmap_user_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_unmap_user_iova);
 
 int cam_smmu_unmap_kernel_iova(int handle,
 	struct dma_buf *buf, enum cam_smmu_region_id region_id)
@@ -3209,7 +3209,7 @@ unmap_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_unmap_kernel_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_unmap_kernel_iova);
 
 
 int cam_smmu_put_iova(int handle, int ion_fd)
@@ -3254,7 +3254,7 @@ put_addr_end:
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_smmu_put_iova);
+EXPORT_SYMBOL_GPL(cam_smmu_put_iova);
 
 int cam_smmu_destroy_handle(int handle)
 {
@@ -3318,7 +3318,7 @@ int cam_smmu_destroy_handle(int handle)
 	mutex_unlock(&iommu_cb_set.cb_info[idx].lock);
 	return 0;
 }
-EXPORT_SYMBOL(cam_smmu_destroy_handle);
+EXPORT_SYMBOL_GPL(cam_smmu_destroy_handle);
 
 static void cam_smmu_deinit_cb(struct cam_context_bank_info *cb)
 {

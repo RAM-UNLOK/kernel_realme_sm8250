@@ -1610,7 +1610,7 @@ int msm_ioctl_rmfb2(struct drm_device *dev, void *data,
 
 	return 0;
 }
-EXPORT_SYMBOL(msm_ioctl_rmfb2);
+EXPORT_SYMBOL_GPL(msm_ioctl_rmfb2);
 
 /**
  * msm_ioctl_power_ctrl - enable/disable power vote on MDSS Hw

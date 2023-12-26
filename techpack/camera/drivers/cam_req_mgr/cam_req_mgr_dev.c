@@ -602,7 +602,7 @@ int cam_req_mgr_notify_message(struct cam_req_mgr_message *msg,
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_req_mgr_notify_message);
+EXPORT_SYMBOL_GPL(cam_req_mgr_notify_message);
 
 void cam_video_device_cleanup(void)
 {
@@ -615,7 +615,7 @@ void cam_register_subdev_fops(struct v4l2_file_operations *fops)
 {
 	*fops = v4l2_subdev_fops;
 }
-EXPORT_SYMBOL(cam_register_subdev_fops);
+EXPORT_SYMBOL_GPL(cam_register_subdev_fops);
 
 int cam_register_subdev(struct cam_subdev *csd)
 {
@@ -664,7 +664,7 @@ reg_fail:
 	mutex_unlock(&g_dev.dev_lock);
 	return rc;
 }
-EXPORT_SYMBOL(cam_register_subdev);
+EXPORT_SYMBOL_GPL(cam_register_subdev);
 
 int cam_unregister_subdev(struct cam_subdev *csd)
 {
@@ -680,7 +680,7 @@ int cam_unregister_subdev(struct cam_subdev *csd)
 
 	return 0;
 }
-EXPORT_SYMBOL(cam_unregister_subdev);
+EXPORT_SYMBOL_GPL(cam_unregister_subdev);
 
 static int cam_req_mgr_remove(struct platform_device *pdev)
 {

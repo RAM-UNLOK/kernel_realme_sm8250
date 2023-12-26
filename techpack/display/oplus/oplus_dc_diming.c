@@ -51,7 +51,7 @@ extern int dsi_panel_seed_mode(struct dsi_panel *panel, int mode);
 
 extern void send_kevent_msg(int *msg);
 int dc_apollo_enable = 0;
-EXPORT_SYMBOL(dc_apollo_enable);
+EXPORT_SYMBOL_GPL(dc_apollo_enable);
 
 struct hbm_status
 {

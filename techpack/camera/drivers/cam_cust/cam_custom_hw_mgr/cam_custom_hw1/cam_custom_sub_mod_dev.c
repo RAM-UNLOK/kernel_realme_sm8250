@@ -23,7 +23,7 @@ struct cam_custom_device_hw_info cam_custom_hw_info = {
 	.irq_mask = 0x0,
 	.irq_clear = 0x0,
 };
-EXPORT_SYMBOL(cam_custom_hw_info);
+EXPORT_SYMBOL_GPL(cam_custom_hw_info);
 
 int cam_custom_hw_sub_mod_init(struct cam_hw_intf **custom_hw, uint32_t hw_idx)
 {
