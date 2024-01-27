@@ -15,7 +15,6 @@
 #include <linux/slab.h>
 #include <linux/string.h>
 #include <linux/sched/topology.h>
-#include <linux/sched/sysctl.h>
 #include <linux/cpuset.h>
 
 DEFINE_PER_CPU(unsigned long, freq_scale) = SCHED_CAPACITY_SCALE;
@@ -69,10 +68,7 @@ static ssize_t cpu_capacity_show(struct device *dev,
 {
 	struct cpu *cpu = container_of(dev, struct cpu, dev);
 
-	if (is_sched_lib_based_app(current->pid))
-		return sysfs_emit_at(buf, PAGE_SIZE, "%lu\n", SCHED_CAPACITY_SCALE);
-
-	return sysfs_emit(buf, "%lu\n", topology_get_cpu_scale(NULL, cpu->dev.id));
+	return sprintf(buf, "%lu\n", topology_get_cpu_scale(NULL, cpu->dev.id));
 }
 
 static void update_topology_flags_workfn(struct work_struct *work);
